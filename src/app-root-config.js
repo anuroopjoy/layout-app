@@ -4,7 +4,7 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
-// import microfrontendLayout from "./microfrontend-layout.html";
+import microfrontendLayout from "./microfrontend-layout.html";
 
 // const microfrontendLayout = document.getElementById("single-spa-layout");
 const customLoader = `<style>
@@ -30,6 +30,8 @@ const customLoader = `<style>
 }
 </style>
 <div class="loader"></div>`;
+
+const customError = "<h1>Oops! About isn't working right now</h1>";
 const config = {
   mode: "hash",
   routes: [
@@ -56,7 +58,12 @@ const config = {
       type: "route",
       path: "about",
       routes: [
-        { type: "application", name: "@app/about", loader: customLoader },
+        {
+          type: "application",
+          name: "@app/about",
+          loader: customLoader,
+          error: customError,
+        },
       ],
       default: false,
     },
@@ -75,9 +82,12 @@ const data = {
   props: {
     user: { fname: "Jane", lname: "John" },
   },
+  errors: {
+    customError,
+  },
 };
-// const routes = constructRoutes(microfrontendLayout, data);
-const routes = constructRoutes(config);
+const routes = constructRoutes(microfrontendLayout, data);
+// const routes = constructRoutes(config);
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
