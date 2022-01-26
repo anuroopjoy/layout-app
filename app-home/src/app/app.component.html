@@ -1,0 +1,18 @@
+<form>
+  <label for="fname">First name:</label><br />
+  <input
+    type="text"
+    id="fname"
+    name="fname"
+    value="{{ (singleSpaProps$ | async)?.user?.fname }}"
+  /><br />
+  <label for="lname">Last name:</label><br />
+  <input
+    type="text"
+    id="lname"
+    name="lname"
+    value="{{ (singleSpaProps$ | async)?.user?.lname }}"
+  /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
+{{ singleSpaProps$ | async | json }}
