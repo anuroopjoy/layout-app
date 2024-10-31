@@ -7,6 +7,7 @@ module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName,
     projectName: "root-config",
+    outputSystemJS: true,
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,

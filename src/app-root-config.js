@@ -86,8 +86,8 @@ const data = {
     customError,
   },
 };
+
 const routes = constructRoutes(microfrontendLayout, data);
-// const routes = constructRoutes(config);
 const applications = constructApplications({
   routes,
   loadApp({ name }) {

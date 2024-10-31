@@ -1,5 +1,5 @@
 {
-  "name": "app-home",
+  "name": "app-nav",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:single-spa:app-home": "ng build app-home --configuration production",
-    "serve:single-spa:app-home": "ng s --project app-home --disable-host-check --port 9002 --live-reload false"
+    "build:single-spa:app-nav": "ng build app-nav --configuration production",
+    "serve:single-spa:app-nav": "ng s --project app-nav --disable-host-check --port 9001 --live-reload false"
   },
   "private": true,
   "dependencies": {

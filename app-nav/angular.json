@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-home": {
+    "app-nav": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/app-home",
+            "outputPath": "dist/app-nav",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": [
@@ -32,10 +32,10 @@
             "scripts": [],
             "customWebpackConfig": {
               "path": "extra-webpack.config.js",
-              "libraryName": "app-home",
+              "libraryName": "app-nav",
               "libraryTarget": "umd"
             },
-            "deployUrl": "http://localhost:9002/"
+            "deployUrl": "http://localhost:9001/"
           },
           "configurations": {
             "production": {
@@ -66,11 +66,11 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-home:build:production"
+              "buildTarget": "app-nav:build:production"
             },
             "development": {
-              "buildTarget": "app-home:build:development",
-              "port": 9002
+              "buildTarget": "app-nav:build:development",
+              "port": 9001
             }
           },
           "defaultConfiguration": "development"
